@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( pose_annotation_tool )
+find_package( OpenCV REQUIRED )
+add_executable( pose_annotation_tool pose_annotation_tool.cpp )
+target_link_libraries( pose_annotation_tool ${OpenCV_LIBS} )
