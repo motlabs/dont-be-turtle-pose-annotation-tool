@@ -1,3 +1,20 @@
+/* Copyright 2018 Jaewook Kang (jwkang10@gmail.com)
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ===================================================================================
+# code reference :  https://github.com/suriyasingh/pose-annotation-tool
+*/
+
+
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -18,8 +35,27 @@ using namespace std;
 
 #define JOINTS 4
 #define NUM_USED_KEY 4
-const char* image_subdir ="/images_for_annotation/";
-const char* label_subdir ="/label_annotated/";
+//const char* image_subdir ="/images_for_annotation/test_set_collected/";
+//const char* label_subdir ="/label_annotated/test_set_collected/";
+
+const char* image_subdir ="/images_for_annotation/train_set_croudworks1/";
+const char* label_subdir ="/label_annotated/train_set_croudworks1/";
+
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks2/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks2/";
+//
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks3/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks3/";
+//
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks4/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks4/";
+//
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks5/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks5/";
+//
+
+
+
 
 /* keyboard number */
 int ESC     = 27;
@@ -126,6 +162,9 @@ int main(int argc, char **argv)
         strcat(path, image_subdir);
         strcat(path, filename);
 
+
+        printf("path = %s",path);
+
 		img = imread(path);
 		Mat progress = Mat::zeros(400, 150, CV_8UC3);
 
@@ -153,7 +192,8 @@ int main(int argc, char **argv)
 			printf("\n[ESC] EXITING");
 			break;
 		}
-		else if(key_pressed == ENTER)
+//		else if(key_pressed == ENTER)
+        else
 		{
 			fprintf(stderr, "\nProcessing : %s", path);
 			printf("\n[Enter] Processing : %s", path);
@@ -221,11 +261,11 @@ int main(int argc, char **argv)
 			fclose(fp_annotation);
 			/* json writting end */
 		}
-		else
-		{
-		    printf("\nkey pressed : %d", key_pressed);
-		    continue;
-		}
+//		else
+//		{
+//		    printf("\nkey pressed : %d", key_pressed);
+//		    continue;
+//		}
 	}
 
 	fclose(fp_list);

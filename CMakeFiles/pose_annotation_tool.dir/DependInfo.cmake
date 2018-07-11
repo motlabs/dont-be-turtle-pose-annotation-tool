@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/jwkangmacpro2/SourceCodes/pose-annotation-tool/pose_annotation_tool.cpp" "/Users/jwkangmacpro2/SourceCodes/pose-annotation-tool/CMakeFiles/pose_annotation_tool.dir/pose_annotation_tool.cpp.o"
+  "/Users/jwkangmacpro2/SourceCodes/dont-be-turtle-pose-annotation-tool/pose_annotation_tool.cpp" "/Users/jwkangmacpro2/SourceCodes/dont-be-turtle-pose-annotation-tool/CMakeFiles/pose_annotation_tool.dir/pose_annotation_tool.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

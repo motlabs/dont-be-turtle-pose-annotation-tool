@@ -35,6 +35,7 @@
 *.xml
 *.jpeg
 *.png
+*.jpg
 
 #Custom files
 Makefile
@@ -56,3 +57,6 @@ CMakeFiles/3.8.1/CMakeSystem.cmake
 CMakeFiles/3.8.1/CompilerIdC/CMakeCCompilerId.c
 CMakeFiles/3.8.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
 .idea/*
+
+
+*.zip
