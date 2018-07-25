@@ -25,15 +25,12 @@ HOME                    =  getcwd()
 DATASET_PATH            = '/images_for_annotation/'
 # DATASET_TYPE            = '/test_set_collected/'
 # RESIED_DATASET_TYPE     = '/test_set_collected_resized/'
-DATASET_TYPE            = '/train_set_croudworks5/'
-RESIED_DATASET_TYPE     = '/train_set_croudworks5/'
+DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks3_640x480/'
+RESIED_DATASET_TYPE     = '/train_set_cloudworks_640x480/train_set_croudworks3_640x480_resized/'
 
 
 RESIZE_HEIGHT = 640
 RESIZE_WIDTH  = 480
-
-# RESIZE_HEIGHT = 256
-# RESIZE_WIDTH  = 256
 
 def main():
 
@@ -48,6 +45,8 @@ def main():
         filelist.remove('.DS_Store')
     except:
         print('No .DS_Store')
+
+    filelist.sort()
 
     for i in range(0,len(filelist)):
 

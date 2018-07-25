@@ -38,20 +38,25 @@ using namespace std;
 //const char* image_subdir ="/images_for_annotation/test_set_collected/";
 //const char* label_subdir ="/label_annotated/test_set_collected/";
 
-const char* image_subdir ="/images_for_annotation/train_set_croudworks1/";
-const char* label_subdir ="/label_annotated/train_set_croudworks1/";
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
 
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks2/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks2/";
+//180725 complete
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
+
+
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks2_640x480/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks2_640x480/";
 //
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks3/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks3/";
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks3_640x480/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks3_640x480/";
 //
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks4/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks4/";
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks4_640x480/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks4_640x480/";
 //
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks5/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks5/";
+const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
+const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
 //
 
 
@@ -153,7 +158,7 @@ int main(int argc, char **argv)
 
 	while(!feof(fp_list))
 	{
-	    char filename[20];
+	    char filename[100];
 		fscanf(fp_list, "%s", filename);
 
         /* image import dir path */

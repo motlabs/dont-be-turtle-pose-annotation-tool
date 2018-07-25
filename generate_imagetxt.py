@@ -23,12 +23,12 @@ import random
 HOME                    =  getcwd()
 DATASET_PATH            = '/images_for_annotation/'
 # DATASET_TYPE            = '/test_set_collected/'
-# DATASET_TYPE            = '/train_set_croudworks1/'
-# DATASET_TYPE            = '/train_set_croudworks2/'
-# DATASET_TYPE            = '/train_set_croudworks3/'
-# DATASET_TYPE            = '/train_set_croudworks4/'
-# DATASET_TYPE            = '/train_set_croudworks5/'
-DATASET_TYPE            = '/lsp_dataset/images/'
+# DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks1_640x480/'
+# DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks2_640x480/'
+# DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks3_640x480/'
+# DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks4_640x480/'
+DATASET_TYPE              = '/train_set_croudworks_640x480/train_set_croudworks5_640x480/'
+# DATASET_TYPE            = '/lsp_dataset/images/'
 
 # RESIED_DATASET_TYPE     = '/test_set_collected_resized/'
 # RESIED_DATASET_TYPE     = '/train_set_croudworks_resized/'
@@ -38,6 +38,7 @@ def main(filename,samplenum):
 
     datapath = HOME + DATASET_PATH + DATASET_TYPE
     filelist = listdir(datapath)
+    filelist.sort()
 
     try:
         filelist.remove('.DS_Store')

@@ -31,8 +31,8 @@ def main():
     filelist_png  = glob('**/**/**/*.png')
 
     filelist = filelist_jpeg + filelist_jpg + filelist_png
-
     filepath = HOME + DATASET_PATH + DATASET_TYPE
+    filelist.sort()
 
     for i in range(0,len(filelist)):
         filename =  filelist[i]
