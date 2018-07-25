@@ -55,8 +55,12 @@ using namespace std;
 //const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks4_640x480/";
 //const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks4_640x480/";
 //
-const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
-const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
+//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
+//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
+////
+
+const char* image_subdir ="/images_for_annotation/YouTube_Pose_dataset_1.0/images/";
+const char* label_subdir ="/label_annotated/YouTube_Pose_dataset_1.0/";
 //
 
 
