@@ -2,7 +2,28 @@
 
 [dont-be-turtle-pose-annotation-tool](https://github.com/motlabs/dont-be-turtle-pose-annotation-tool)에서 만든 데이터셋 포맷을 [COCO 데이터셋 포맷](http://cocodataset.org/#format-data)으로 변환하는 스크립트입니다.
 
-### dont-be-turtle format
+### Usage
+
+#### 1. Install pillow module 
+
+```
+$ pip install Pillow
+```
+
+#### 2. Set source dataset path and destination dataset path in `converter_cocoformat.py`
+
+```python
+source_path = "{source_path}"
+destination_path = "{destination_path}"
+```
+
+#### 3. Run `converter_cocoformat.py` script
+
+```shell
+$ python converter_cocoformat.py
+```
+
+### dont-be-turtle format(source format)
 
 #### folder structure
 
@@ -28,7 +49,7 @@ dataset
 }
 ```
 
-### COCO format
+### COCO format(destination format)
 
 #### folder structure
 
