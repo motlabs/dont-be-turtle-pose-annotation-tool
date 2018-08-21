@@ -150,7 +150,7 @@ dataset2
          "category_id": 1, 
          "num_keypoints": 4},
         ...
-	]
+	],
     "categories": [{
         'supercategory': 'body',
         'name': 'up pose',
