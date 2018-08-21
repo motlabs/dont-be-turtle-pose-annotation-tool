@@ -6,24 +6,26 @@ This is an annotation tool for [the dont be turtle proj](https://github.com/motl
 
 ## Installation
 
-### Compiling
+### Git Clone and Cmake
 ```bash
 $ git clone https://github.com/motlabs/dont-be-turtle-pose-annotation-tool 
 $ cmake CMakeLists.txt
+$ make
+
 ```
 
 ### How to Use 
 
 #### 1) Placing your dataset
-Placing your dataset at `./images_for_annoation`.
-For example, when we have the LSP dataset, the images are located at
+Placing your dataset at `./images_for_annoation` by creating a subfolder.
+For example, when you place the LSP dataset, the images could be located at
 ```bash
-$IMAGE_DIR=images_for_annotation/lsp_dataset/images
+$IMAGE_DIR=./images_for_annotation/lsp_dataset/images/
 ```
 
 #### 2) Running the program
 ```bash
-$ python run_annotation.py $IMAGE_DIR
+$ python run_annotation.py --imagedir=$IMAGE_DIR
 ```
 
 
@@ -36,15 +38,13 @@ We can have three choices before starting the annotation:
 ```
 - Press ENTER to annotate the current image
 - Press SPACE to skip the current image
-- Press D to remote the current image from the dataset.
 ```
 
 Then the annotation is manipulated by the following:  
 ```
-- Left Click: Visible joint
-- Right Click: Occluded joint
+- Left Click  + Any key: Annotate a visible joint and register
+- Right Click + Any key: Annotate a occluded joint and register
 - TAB: Current joint is not applicable for current image
-- Any key: register the annotation and move to next joint
 ```
 
 #### 4) Getting Results

@@ -23,8 +23,8 @@ import random
 HOME                    =  getcwd()
 DATASET_PATH            = '/images_for_annotation/'
 # DATASET_TYPE            = '/dontbeturtle/croudworks/train_set_croudworks5_640x480'
-# DATASET_TYPE            = '/dontbeturtle/custom'
-DATASET_TYPE            = '/dontbeturtle/flic/0'
+DATASET_TYPE            = '/dontbeturtle/custom'
+# DATASET_TYPE            = '/dontbeturtle/flic/0'
 # DATASET_TYPE            = '/dontbeturtle/shortbbcpose/0'
 
 # DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks1_640x480/'
@@ -39,7 +39,7 @@ DATASET_TYPE            = '/dontbeturtle/flic/0'
 # RESIED_DATASET_TYPE     = '/train_set_croudworks_resized/'
 
 
-def main(filename,samplenum):
+def main(filename,samplenum=None):
 
     datapath = HOME + DATASET_PATH + DATASET_TYPE
     filelist = listdir(datapath)
@@ -50,8 +50,11 @@ def main(filename,samplenum):
     except:
         print('No .DS_Store')
 
+    if samplenum == None:
+        samplenum = len(filelist)
+
     print('[main] Dataset path: %s' % datapath)
-    if samplenum < len(filelist):
+    if int(samplenum) < len(filelist):
         picked_filelist = random.sample(set(filelist),int(samplenum))
         print('[main] Randomly sample %s samples from set' % samplenum)
     else:
@@ -78,7 +81,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         '--samplenum',
-        default=['10'],
+        default=[None],
         help='The number of image samples to pick',
         nargs='+',
         required = False

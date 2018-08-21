@@ -36,45 +36,6 @@ using namespace std;
 #define JOINTS 4
 #define NUM_USED_KEY 4
 
-//const char* image_subdir ="/images_for_annotation/dontbeturtle/shortbbcpose/0/";
-//const char* label_subdir ="/label_annotated/dontbeturtle/shortbbcpose/0/";
-
-const char* image_subdir ="/images_for_annotation/dontbeturtle/flic/0/";
-const char* label_subdir ="/label_annotated/dontbeturtle/flic/0/";
-
-//const char* image_subdir ="/images_for_annotation/dontbeturtle/custom";
-//const char* label_subdir ="/label_annotated/dontbeturtle/custom";
-
-
-//const char* image_subdir ="/images_for_annotation/dontbeturtle/croudworks/train_set_croudworks5_640x480/";
-//const char* label_subdir ="/label_annotated/dontbeturtle/croudworks/";
-
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
-
-//180725 complete
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
-
-
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks2_640x480/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks2_640x480/";
-//
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks3_640x480/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks3_640x480/";
-//
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks4_640x480/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks4_640x480/";
-//
-//const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
-//const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
-////
-
-//const char* image_subdir ="/images_for_annotation/YouTube_Pose_dataset_1.0/images/";
-//const char* label_subdir ="/label_annotated/YouTube_Pose_dataset_1.0/";
-////
-
-
 
 
 /* keyboard number */
@@ -148,13 +109,15 @@ int main(int argc, char **argv)
 	init();
 
 	char cCurrentPath[FILENAME_MAX];
+    char* image_subdir = (char*)argv[2];
+    char* label_subdir = (char*)argv[3];
 
     // find absolute path  for  file read//
     GetCurrentDir(cCurrentPath, sizeof(cCurrentPath));
     cCurrentPath[sizeof(cCurrentPath) - 1] = '\0';
     printf("CurrentPath = %s\n",cCurrentPath);
-    printf("Image import dirpath=.%s\n",image_subdir);
-    printf("Lable export dirpath=.%s\n",label_subdir);
+    printf("Image import dirpath=%s\n",image_subdir);
+    printf("Lable export dirpath=%s\n",label_subdir);
     printf("-----------------------------------\n");
 
 	if(argc < 1)
@@ -208,8 +171,8 @@ int main(int argc, char **argv)
 		}
 		else if(key_pressed == ESC)
 		{
-			fprintf(stderr, "\nEXITING");
-			printf("\n[ESC] EXITING");
+			fprintf(stderr, "\nEXITING at %s\n", path);
+			printf("\n[ESC] EXITING at %s\n", path);
 			break;
 		}
 //		else if(key_pressed == ENTER)
