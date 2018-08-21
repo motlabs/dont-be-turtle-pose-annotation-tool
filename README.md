@@ -1,60 +1,74 @@
 # pose-annotation-tool for dont be turtle proj
 
 ## About
-This is 
+This is an annotation tool for [the dont be turtle proj](https://github.com/motlabs/dont-be-turtle). 
+
 
 ## Installation
 
 ### Compiling
 ```bash
+$ git clone https://github.com/motlabs/dont-be-turtle-pose-annotation-tool 
 $ cmake CMakeLists.txt
-$ make
 ```
 
-### Running
+### How to Use 
 
+#### 1) Placing your dataset
+Placing your dataset at `./images_for_annoation`.
+For example, when we have the LSP dataset, the images are located at
 ```bash
-$ ./pose_annotation_tool images_list.txt
+$IMAGE_DIR=images_for_annotation/lsp_dataset/images
 ```
 
-## How to use
+#### 2) Running the program
+```bash
+$ python run_annotation.py $IMAGE_DIR
+```
 
 
-### Using the tool
-The image is loaded and displayes on screen one by one.
+#### 3) Starting Annotation
+When running this program, two windows are popped up: 
+- One shows the images that is currently annotating. 
+- Another shows which keypoint is currently pointed.  
 
-Press ENTER to annoate current image
+We can have three choices before starting the annotation:
+```
+- Press ENTER to annotate the current image
+- Press SPACE to skip the current image
+- Press D to remote the current image from the dataset.
+```
 
-Press SPACE to skip current image
+Then the annotation is manipulated by the following:  
+```
+- Left Click: Visible joint
+- Right Click: Occluded joint
+- TAB: Current joint is not applicable for current image
+- Any key: register the annotation and move to next joint
+```
 
+#### 4) Getting Results
+The annotation results are formatted by a `JSON` format. 
+For example,
+```bash
+{
+	 "image_path": "./images_for_annotation/lsp_dataset/images/front_normal_10754.jpg",
+	 "head": [ 248 ,127, 0 ],
+	 "nose": [ 251 ,284, 0 ],
+	 "Rshoulder": [ 87 ,406, 0 ],
+	 "Lshoulder": [ 412 ,399, 0 ]
+}
 
-#### Once the image has been selected for annotation
+``` 
 
-Left Click - Visible joint
-
-Right Click - Occluded joint
-
-TAB - Current joint is not applicable for current image
-
-Any key - register the annotation and move to next joint
-
-#### After all the joints are annotated the joint coordinates is written to file and next image is loaded.
-
-## Components
-
-#### generate_imagetxt.py
-- Generate image files list included in image annotation
-
-#### convert_lspdata_label_to_json.py
-- Conversion the original lsp label set to a label set for dont be turtle proj
-
-#### rename_train_set_croudworks.py
-- rename cloudwork dataset to remove phonename and attach image index
-
-#### resize_image.py
-- resize cloudwork dataset to the size 640 X 480
-
- 
+And, being recorded at
+```bash
+$LABEL_DIR=label_annotated/lsp_dataset/labels
+```
+> Note that one label json file is generated for one input image (one to one corresponding relation for the image and label).
 
 ## Code Reference
 - [ https://github.com/suriyasingh/pose-annotation-tool]( https://github.com/suriyasingh/pose-annotation-tool )
+
+## Feedback
+- Jaewook Kang (jwkang@gmail.com)

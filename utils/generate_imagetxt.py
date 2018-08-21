@@ -22,13 +22,17 @@ import random
 
 HOME                    =  getcwd()
 DATASET_PATH            = '/images_for_annotation/'
-# DATASET_TYPE            = '/test_set_collected/'
+# DATASET_TYPE            = '/dontbeturtle/croudworks/train_set_croudworks5_640x480'
+# DATASET_TYPE            = '/dontbeturtle/custom'
+DATASET_TYPE            = '/dontbeturtle/flic/0'
+# DATASET_TYPE            = '/dontbeturtle/shortbbcpose/0'
+
 # DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks1_640x480/'
 # DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks2_640x480/'
 # DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks3_640x480/'
 # DATASET_TYPE            = '/train_set_croudworks_640x480/train_set_croudworks4_640x480/'
 # DATASET_TYPE              = '/train_set_croudworks_640x480/train_set_croudworks5_640x480/'
-DATASET_TYPE              = '/YouTube_Pose_dataset_1.0/images/'
+# DATASET_TYPE              = '/YouTube_Pose_dataset_1.0/images/'
 # DATASET_TYPE            = '/lsp_dataset/images/'
 
 # RESIED_DATASET_TYPE     = '/test_set_collected_resized/'

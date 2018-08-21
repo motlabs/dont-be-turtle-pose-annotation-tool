@@ -34,11 +34,20 @@ def main():
     filepath = HOME + DATASET_PATH + DATASET_TYPE
     filelist.sort()
 
+    folder_index = 0
+    fileindex = 0
+    prev_filename_label=''
+
     for i in range(0,len(filelist)):
         filename =  filelist[i]
         filename_split = filename.split('/')
-
         filename_label= str(filename_split[-2])
+
+        if i > 0 and (filename_label != prev_filename_label):
+            folder_index +=  1
+            fileindex     =  0
+
+
 
         filename_split_split    = filename_split[-1].split('.')
         filename_extension      = filename_split_split[-1]
@@ -47,13 +56,12 @@ def main():
         prefix                  = temp[-2]
 
 
-        filerename = prefix + '_' + filename_label + '_' + str(filename_num) + '.' + filename_extension
+        filerename = prefix + '_' + str(filename_label) + '_' + str(fileindex) + '.' + filename_extension
 
         check_output('mv ' + HOME  + filename + ' ' + filepath +'/'+ filerename,shell=True)
 
-
-
-
+        prev_filename_label = filename_label
+        fileindex   += 1
 
 if __name__ == "__main__":
     main()

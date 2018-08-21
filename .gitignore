@@ -60,3 +60,5 @@ CMakeFiles/3.8.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
 
 
 *.zip
+images.txt
+*.mat

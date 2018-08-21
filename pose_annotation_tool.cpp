@@ -35,8 +35,19 @@ using namespace std;
 
 #define JOINTS 4
 #define NUM_USED_KEY 4
-//const char* image_subdir ="/images_for_annotation/test_set_collected/";
-//const char* label_subdir ="/label_annotated/test_set_collected/";
+
+//const char* image_subdir ="/images_for_annotation/dontbeturtle/shortbbcpose/0/";
+//const char* label_subdir ="/label_annotated/dontbeturtle/shortbbcpose/0/";
+
+const char* image_subdir ="/images_for_annotation/dontbeturtle/flic/0/";
+const char* label_subdir ="/label_annotated/dontbeturtle/flic/0/";
+
+//const char* image_subdir ="/images_for_annotation/dontbeturtle/custom";
+//const char* label_subdir ="/label_annotated/dontbeturtle/custom";
+
+
+//const char* image_subdir ="/images_for_annotation/dontbeturtle/croudworks/train_set_croudworks5_640x480/";
+//const char* label_subdir ="/label_annotated/dontbeturtle/croudworks/";
 
 //const char* image_subdir ="/images_for_annotation/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
 //const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks1_640x480/";
@@ -59,9 +70,9 @@ using namespace std;
 //const char* label_subdir ="/label_annotated/train_set_croudworks_640x480/train_set_croudworks5_640x480/";
 ////
 
-const char* image_subdir ="/images_for_annotation/YouTube_Pose_dataset_1.0/images/";
-const char* label_subdir ="/label_annotated/YouTube_Pose_dataset_1.0/";
-//
+//const char* image_subdir ="/images_for_annotation/YouTube_Pose_dataset_1.0/images/";
+//const char* label_subdir ="/label_annotated/YouTube_Pose_dataset_1.0/";
+////
 
 
 
@@ -88,7 +99,7 @@ int r[2], g[2], b[2];
 char joints[JOINTS][20] =
 {
     "head",
-    "neck",
+    "nose",
     "Rshoulder",
     "Lshoulder"
 };

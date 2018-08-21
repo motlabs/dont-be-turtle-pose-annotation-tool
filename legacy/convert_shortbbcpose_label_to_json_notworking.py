@@ -34,7 +34,7 @@ from PIL import Image
 
 HOME                    = getcwd() +'/'
 DATASET_PATH            = 'images_for_annotation/'
-DATASET_TYPE            = 'lsp_dataset_original/'
+DATASET_TYPE            = 'YouTube_Pose_dataset_1.0/'
 IMAGE_FILE_FOLDER_NAME  = 'images/'
 LABEL_FILE_NAME         = 'joints.mat'
 
@@ -54,12 +54,12 @@ ANNOTATION_PATH         = 'label_annotated/'
 9 Left shoulder
 10 Left elbow
 11 Left wrist
-12 Neck
+12 Neck (actually we annotatge neck instead of neck)
 13 Head top
 '''
 
 HEAD        = 13
-NECK        = 12
+NECK        = 12 # actually nose
 R_SHOULDER  = 8
 L_SHOULDER  = 9
 
@@ -91,21 +91,19 @@ def main():
     img_file_list.sort()
 
     # (x,y,v)
-    label_coord_x_head  =   joints['joints'][0][HEAD]
-    label_coord_y_head  =   joints['joints'][1][HEAD]
-    label_coord_v_head  =   joints['joints'][2][HEAD]
+
+    label_coord_x_head  =   joints['data'][0][0][0][HEAD]
+    label_coord_x_head  =   joints['data'][0][0][1][HEAD]
+
 
     label_coord_x_neck  =   joints['joints'][0][NECK]
     label_coord_y_neck  =   joints['joints'][1][NECK]
-    label_coord_v_neck  =   joints['joints'][2][NECK]
 
     label_coord_x_rshoulder  =   joints['joints'][0][R_SHOULDER]
     label_coord_y_rshoulder  =   joints['joints'][1][R_SHOULDER]
-    label_coord_v_rshoulder  =   joints['joints'][2][R_SHOULDER]
 
     label_coord_x_lshoulder  =   joints['joints'][0][L_SHOULDER]
     label_coord_y_lshoulder  =   joints['joints'][1][L_SHOULDER]
-    label_coord_v_lshoulder  =   joints['joints'][2][L_SHOULDER]
 
 
     try:
