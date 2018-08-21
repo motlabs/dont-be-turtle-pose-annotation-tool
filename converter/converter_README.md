@@ -1,13 +1,13 @@
 ## dont-be-turtle format to COCO format converter
 
-[dont-be-turtle-pose-annotation-tool](https://github.com/motlabs/dont-be-turtle-pose-annotation-tool)에서 만든 데이터셋 포맷을 [COCO 데이터셋 포맷](http://cocodataset.org/#format-data)으로 변환하는 스크립트입니다.
+This scripts convert dont-be-turtle format(created from [dont-be-turtle-pose-annotation-tool](https://github.com/motlabs/dont-be-turtle-pose-annotation-tool)) to [COCO format](http://cocodataset.org/#format-data).
 
 ### Usage
 
-#### 1. Install pillow module 
+#### 1. Install Pillow module 
 
-```
-$ pip install Pillow
+```shell
+pip install Pillow
 ```
 
 #### 2. Set source dataset path and destination dataset path in `converter_cocoformat.py`
@@ -17,10 +17,18 @@ source_path = "{source_path}"
 destination_path = "{destination_path}"
 ```
 
-#### 3. Run `converter_cocoformat.py` script
+#### 3. Run scripts
+
+##### 3.1 Convert dont-be-turtle format to coco format
 
 ```shell
 $ python converter_cocoformat.py
+```
+
+##### 3.2 Update image path on `ai_challenger_train.json` for prefix 
+
+```shell
+$ python image_path_prefix.py
 ```
 
 ### dont-be-turtle format(source format)
@@ -152,6 +160,26 @@ dataset2
     }]
 }
 ```
+
+## Components
+
+#### converter_format.py
+
+Convert dont-be-turtle format to COCO format.
+
+#### image_path_prefix.py
+
+```
+"file_name": "front_turtle_14606.png"
+```
+
+to
+
+```
+"file_name": "prefix_somepath/front_turtle_14606.png"
+```
+
+on `ai_challenger_train.json`
 
 ### See also
 
