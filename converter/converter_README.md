@@ -7,7 +7,7 @@ This scripts convert dont-be-turtle format(created from [dont-be-turtle-pose-ann
 #### 1. Install Pillow module 
 
 ```shell
-pip install Pillow
+$ pip install Pillow
 ```
 
 #### 2. Set source dataset path and destination dataset path in `converter_cocoformat.py`
@@ -63,8 +63,8 @@ dataset
 
 ```
 dataset2
-  ├ ai_challenger_train.json
-  ├ train
+  ├ annotation.json
+  ├ images
     ├ front_normal_10629.jpg
     ├ front_normal_10630.jpg
 ```
@@ -105,6 +105,7 @@ dataset2
         	0, 0, 0, 
         	0, 0, 0], 
     	"area": 500000, 
+    	"bbox": [0, 0, 0, 0],
     	"id": 192217, 
     	"image_id": 192217, 
     	"category_id": 1, 
@@ -125,6 +126,7 @@ dataset2
         	0, 0, 0, 
         	0, 0, 0], 
         "area": 500000, 
+    	"bbox": [0, 0, 0, 0],
         "id": 192128, 
         "image_id": 192128, 
         "category_id": 1, 
@@ -145,6 +147,7 @@ dataset2
          	0, 0, 0, 
          	0, 0, 0], 
          "area": 500000, 
+    	"bbox": [0, 0, 0, 0],
          "id": 220248, 
          "image_id": 220248, 
          "category_id": 1, 
@@ -179,7 +182,7 @@ to
 "file_name": "prefix_somepath/front_turtle_14606.png"
 ```
 
-on `ai_challenger_train.json`
+on `annotation.json`
 
 ### See also
 

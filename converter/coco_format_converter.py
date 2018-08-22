@@ -3,8 +3,8 @@ import shutil
 from PIL import Image
 
 
-source_path = "dontbeturtle_dataset_1/train"
-destination_path = "./converted/dontbeturtle_dataset2"
+source_path = "/Users/canapio/Project/machine learning/MoT Labs/dataset/dontbeturtle_custom_180820"
+destination_path = "/Users/canapio/Project/machine learning/MoT Labs/dataset/converted/dontbeturtle_custom_180820"
 
 """ Source Dataset 
 dataset
@@ -150,6 +150,7 @@ def convert(source_labels_path, source_images_path, images_destination_path, ann
         anno_info = {
             'keypoints': keypoints,
             'area': 500000,
+            'bbox':[0,0,0,0],
             'id': img_id,
             'image_id': img_id,
             'category_id': 1,
@@ -178,11 +179,11 @@ def convert(source_labels_path, source_images_path, images_destination_path, ann
 
 make_dir(destination_path)
 
-train_images_destination_path = os.path.join(destination_path, "train")
+train_images_destination_path = os.path.join(destination_path, "images")
 
 make_dir(train_images_destination_path)
 
-train_annotation_json_path = os.path.join(destination_path, "ai_challenger_train.json")
+train_annotation_json_path = os.path.join(destination_path, "annotation.json")
 
 
 convert(source_labels_path,
